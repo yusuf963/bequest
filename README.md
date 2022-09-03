@@ -1,6 +1,121 @@
-# Getting Started with Create React App
+## Project design and configuration
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Creating a great user experience was in the center of what I have tried to build with the available time window, I have build accordingly by following my assumption.
+
+1. Make the UI looks and feels as what in the bequest official website
+2. Create interactive navigation bar
+3. Create address book
+4. Create input to capture user typing
+5. currently, user able to search by postcode only( not by address)
+6. user able to same address in their book address by clicking on any address result
+7. user data is save and persistent by utilizing browser local storage
+
+## Node version
+
+required v18.7.0
+
+## Technologies used in the project
+
+1. Docker
+2. Docker Compose
+3. React
+4. Typescript
+5. HTML and Dom objects
+6. CSS3
+7. Media queries
+8. story book
+
+## Libraries used in the project
+
+1. React
+2. axios
+3. react testing library
+4. Typescript
+5. prettier
+6. eslint
+7. eslint-plugin-react
+8. eslint-plugin-prettier
+9. husky
+10. story book
+
+## The Components
+
+1. App
+2. Loader
+3. Typography
+4. Input
+5. Navigation
+6. AddressBook
+7. Lookup Container
+
+## project structure
+
+|--bequest
+    |---public
+    |---src
+        |--assets
+        |---components
+        |---hooks
+        |---stories
+        |---type
+        |---utils
+    ....
+    eslintrc
+    Dockerfile
+    package.json
+    tsconfig.json
+    ....
+
+## The Challenges I faced during development:
+
+- Retrieve data from local storage as an array
+- Manage the state( I am currently thinking of introducing redux)
+- I couldn't find the url string for find by address and I didn't have time to check the docs properly
+- Time
+
+## Things to be improved:
+
+1. Cover more edge cases
+2. Make it more efficient
+3. Allow user to search by address
+
+## The Sources I looked at:
+
+1. Github issue
+2. Stack overflow
+3. Google
+
+# How to run the App? there are Two way to run the Apps
+## using npm
+
+1. navigate to the root directory of the project
+2. open new terminal tab in the root directory of the project and run the following command:
+   `npm install && npm start`
+3. visit the url: `http://localhost:3000`
+
+## 2. Run the app using Container
+
+1. make sure you have docker desk top installed and its running, you can run it using docker or docker compose with one command
+
+#### Docker
+
+1. build image `docker build -t client:v1 .`
+2. run image`docker run -it -p 3000:3000 client:v1`
+3. visit the app on `http://localhost:3000`
+
+### Docker-compose
+
+1. run the following command in the terminal
+   `docker-compose up --build`
+2. you can check the services are running by visiting the following url:
+   Client `http://localhost:3000`
+
+# Testing
+
+There are 10 tests covering most of the meaningful test cases
+
+1. run the following command in the terminal
+   `npm test`
 
 ## Available Scripts
 
@@ -8,39 +123,10 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### `npx prettier --write .` to format all code
