@@ -129,4 +129,4 @@ In the project directory, you can run:
 
 ### `npm run eject`
 
-### `npx prettier --write .` to format all code
+### `npx prettier --write .`
